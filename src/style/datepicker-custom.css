@@ -1,0 +1,84 @@
+/* @tailwind components; */
+.react-datepicker-popper {
+  & .react-datepicker {
+    width: 100%;
+    max-width: 209px;
+    border-radius: 8px;
+    border: 1px solid #cbcbcb80;
+    background-color: #fff;
+    padding: 8px 0;
+    box-shadow: 0px 2px 3px #cbcbcb;
+
+    & .react-datepicker__month-container {
+      float: none;
+      width: 100%;
+      padding: 0 0;
+
+      /* header */
+      & .react-datepicker__header {
+        border: 0 none;
+        background-color: #fff;
+        padding: 0;
+
+        & .react-datepicker__day-names {
+          margin: 0;
+          padding-bottom: 4px;
+
+          & .react-datepicker__day-name {
+            width: 24px;
+            font-size: 0.875rem /* 14px */;
+            line-height: 20px;
+            letter-spacing: -0.7px;
+            font-weight: 400;
+            color: #333333;
+
+            &:nth-child(1),
+            &:nth-child(7) {
+              color: #ff6f6e;
+            }
+          }
+        }
+      }
+      & .react-datepicker__month {
+        margin: 0;
+
+        & .react-datepicker__day {
+          width: 24px;
+          height: 24px;
+          border-radius: 6px;
+          font-size: 12px;
+          line-height: 24px;
+          letter-spacing: -0.6px;
+          font-weight: 400;
+          color: #333;
+
+          &.react-datepicker__weekend-end {
+            color: #ff6f6e;
+          }
+          &.react-datepicker__day--selected {
+            border-radius: 6px;
+            background-color: #ffeaec;
+            font-weight: bold;
+          }
+          &.react-datepicker__day--keyboard-selected {
+            border-radius: 6px;
+            background-color: rgb(255 234 236 / 0.6) !important;
+            font-weight: 400;
+          }
+
+          &.react-datepicker__day--outside-month {
+            color: #cbcbcb;
+          }
+        }
+      }
+    }
+
+    & .react-datepicker__children-container {
+      margin: 0;
+      width: 100%;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 16px;
+    }
+  }
+}

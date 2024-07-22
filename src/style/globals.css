@@ -1,0 +1,434 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-weight: 700;
+    font-family: 'Spoqa-Han-Sans-Neo';
+    src:
+      local('Spoqa Han Sans Neo Bold'),
+      url('../../public/fonts/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf') format('otf'),
+      url('../../public/fonts/SpoqaHanSansNeo_TTF_subnet/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-weight: 500;
+    font-family: 'Spoqa-Han-Sans-Neo';
+    src:
+      local('Spoqa Han Sans Neo Medium'),
+      url('../../public/fonts/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Medium.otf') format('otf'),
+      url('../../public/fonts/SpoqaHanSansNeo_TTF_subnet/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-family: 'Spoqa-Han-Sans-Neo';
+    src:
+      local('Spoqa Han Sans Neo Regular'),
+      url('../../public/fonts/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf') format('otf'),
+      url('../../public/fonts/SpoqaHanSansNeo_TTF_subnet/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-weight: 300;
+    font-family: 'Spoqa-Han-Sans-Neo';
+    src:
+      local('Spoqa Han Sans Neo Light'),
+      url('../../public/fonts/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Light.otf') format('otf'),
+      url('../../public/fonts/SpoqaHanSansNeo_TTF_subnet/SpoqaHanSansNeo-Light.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-weight: 100;
+    font-family: 'Spoqa-Han-Sans-Neo';
+    src:
+      local('Spoqa Han Sans Neo Thin'),
+      url('../../public/fonts/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Thin.otf') format('otf'),
+      url('../../public/fonts/SpoqaHanSansNeo_TTF_subnet/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    min-height: 100dvh;
+    max-width: 100dvw;
+    overflow-x: clip;
+  }
+
+  body {
+    font-family: 'Spoqa-Han-Sans-Neo', 'Spoqa Han Sans Neo', ui-sans-serif, system-ui, sans-serif, standard;
+    font-weight: 400;
+  }
+
+  select:active {
+    @apply text-base;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    /* -webkit-text-fill-color: #fff !important; */
+  }
+
+  textarea::-webkit-scrollbar {
+    display: inline;
+    width: 6px;
+  }
+
+  textarea::-webkit-scrollbar-track {
+    margin-block: 4px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #cbcbcb;
+    border-radius: 8px;
+  }
+
+  /*   ::-webkit-scrollbar {
+    display: none;
+  }
+ */
+  ::-webkit-scrollbar {
+    display: inline;
+    width: 6px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    display: inline;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    margin-block: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #cbcbcb !important;
+    border-radius: 8px;
+  }
+
+  /* 특정 클래스의 스크롤바 스타일링 */
+  .visible-scrollbar::-webkit-scrollbar {
+    display: block; /* 스크롤바 보이게 설정 */
+    width: 6px;
+    height: 6px;
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-track {
+    /*background: #f1f1f1;*/
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 6px;
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #707070;
+  }
+
+  .scroll-body::-webkit-scrollbar {
+    display: inline;
+    width: 6px;
+  }
+
+  .scroll-body::-webkit-scrollbar-thumb {
+    background-color: #cbcbcb;
+    border-radius: 10px;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .img-button {
+    @apply appearance-none transition-all;
+
+    & svg {
+      @apply transition-all duration-200;
+    }
+  }
+
+  .hover-font-bold {
+    &:hover {
+      font-weight: bold;
+    }
+
+    &::after {
+      content: attr(data-menu);
+      content: attr(data-menu) / '';
+      height: 0;
+      display: block;
+      visibility: hidden;
+      user-select: none;
+      pointer-events: none;
+      font-weight: bold;
+      @media speech {
+        display: none;
+      }
+    }
+  }
+
+  .hover-sub-nav {
+    &:hover {
+      font-size: 14px;
+    }
+
+    &::after {
+      content: attr(data-menu);
+      content: attr(data-menu) / '';
+      height: 0;
+      display: block;
+      visibility: hidden;
+      user-select: none;
+      pointer-events: none;
+      font-size: 14px;
+      @media speech {
+        display: none;
+      }
+    }
+  }
+  /* .fixed-textarea::-webkit-scrollbar-button:vertical:end {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    border-bottom: 1px solid transparent;
+  } */
+  .textarea-focus textarea::-webkit-scrollbar-button:vertical:end {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    border-bottom: 2.25rem solid transparent;
+  }
+  .textarea-focus textarea::-webkit-scrollbar-button:vertical:start {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    height: 4px;
+    background-color: transparent;
+  }
+
+  /*  .textarea-focus textarea::-webkit-scrollbar-button:start {
+    position: absolute;
+    overflow: hidden;
+    content: '';
+    border-top: 12px solid transparent;
+  } */
+
+  /* .textarea-focus {
+      @apply h-20;
+      &:has(textarea:focus) {
+        @apply h-[120px];
+      }
+    } */
+  .submenu-state {
+    position: relative;
+
+    &::after {
+      content: attr(data-state);
+      font-size: 8px;
+      font-weight: bold;
+      line-height: 11px;
+      min-width: 10px;
+      height: 10px;
+      display: inline-flex;
+      @apply absolute left-full top-0 -translate-y-2/3 rounded-[24px] bg-primary px-[3px] text-white;
+    }
+
+    &[data-state='N']::after,
+    &[data-state='n']::after {
+      @apply inline-block w-2.5 min-w-0 px-0 text-center align-middle leading-[12px];
+    }
+  }
+
+  .text-valid {
+    @apply rounded-base border border-tertiary-base;
+
+    &:has(textarea:focus),
+    &:has(textarea:valid) {
+      @apply border-primary focus:outline-0 focus:ring-0;
+    }
+  }
+
+  /* helper btn */
+  .helper-footer-btn {
+    @apply flex-none text-body font-bold;
+  }
+
+  .helper-footer-btn-full-rounded {
+    @apply rounded-none lg:rounded-b-base lg:rounded-t-none;
+  }
+
+  .helper-footer-btn-left-rounded {
+    @apply rounded-none border-r-0 lg:rounded-t-none lg:rounded-bl-base;
+  }
+
+  .helper-footer-btn-right-rounded {
+    @apply rounded-none lg:rounded-t-none lg:rounded-br-base;
+  }
+
+  /* swiper */
+  #img-modal-swiper {
+    --swiper-pagination-color: #fff;
+    --swiper-navigation-size: 36px;
+    --swiper-navigation-sides-offset: 8px;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: var(--swiper-navigation-size);
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      display: block;
+      content: '';
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g id="그룹_13037" data-name="그룹 13037" transform="translate(-1014.238 -387.5)"><rect id="사각형_6392" data-name="사각형 6392" width="36" height="36" transform="translate(1014.238 387.5)" fill="none"/><path id="패스_5906" data-name="패스 5906" d="M0,0,7.5,7.464,0,15.007" transform="translate(1028.486 397.996)" fill="none" stroke="%234e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>');
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-button-next:after {
+      margin-left: var(--swiper-navigation-sides-offset);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g id="그룹_13037" data-name="그룹 13037" transform="translate(-1014.238 -387.5)"><rect id="사각형_6392" data-name="사각형 6392" width="36" height="36" transform="translate(1014.238 387.5)" fill="none"/><path id="패스_5906" data-name="패스 5906" d="M0,0,7.5,7.464,0,15.007" transform="translate(1028.486 397.996)" fill="none" stroke="%234e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>');
+    }
+
+    .swiper-button-prev:after {
+      margin-right: var(--swiper-navigation-sides-offset);
+      background-image: url('data:image/svg+xml,<svg id="그룹_13038" data-name="그룹 13038" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><rect id="사각형_6392" data-name="사각형 6392" width="36" height="36" fill="none"/><path id="패스_5906" data-name="패스 5906" d="M0,15.007,7.5,7.544,0,0" transform="translate(21.752 25.503) rotate(180)" fill="none" stroke="%234e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>');
+    }
+  }
+
+  /* 프로세스 화살표 */
+  .center-process-arr {
+    & > div {
+      position: relative;
+
+      &::before {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36 36"><g id="그룹_13037" data-name="그룹 13037" transform="translate(-1014.238 -387.5)"><rect id="사각형_6392" data-name="사각형 6392" width="36" height="36" transform="translate(1014.238 387.5)" fill="none"/><path id="패스_5906" data-name="패스 5906" d="M0,0,7.5,7.464,0,15.007" transform="translate(1028.486 397.996)" fill="none" stroke="%234e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></g></svg>');
+      }
+    }
+
+    & > div:not(:last-of-type)::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      @apply left-1/2 top-[calc(100%+12px)]  -translate-x-1/2 rotate-90 lg:left-[calc(100%+12px)] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:rotate-0;
+    }
+  }
+}
+
+/* toast */
+/* 나오는 효과 */
+@keyframes Toastify__bounceInDown {
+  0%,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: ease-in;
+  }
+  0% {
+    opacity: 0;
+    transform: none;
+  }
+  60% {
+    opacity: 1;
+    transform: none;
+  }
+  75% {
+    transform: none;
+  }
+  90% {
+    transform: none;
+  }
+  to {
+    transform: none;
+  }
+}
+/* 나가는 효과 */
+@keyframes Toastify__bounceOutUp {
+  20% {
+    opacity: 1 !important;
+    transform: translate3d(0, 0px, 0);
+  }
+  40%,
+  45% {
+    opacity: 1 !important;
+    transform: translate3d(0, 0px, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+.Toastify__toast-container--top-center {
+  --containerPos: 264px;
+  --toastify-toast-max-width: 256px;
+  --toastify-toast-top: 50%;
+  --toastify-toast-left: calc(50% + (var(--containerPos) / 2));
+  --toastify-toast-bd-radius: 10px;
+  max-width: var(--toastify-toast-max-width);
+  left: var(--toastify-toast-left);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  @media (max-width: 1024px) {
+    --toastify-toast-left: 50%;
+    top: 50%;
+  }
+}
+
+/* 메인토스트 wrap  */
+.main-toast.Toastify__toast-container--top-center {
+  --toastify-toast-left: 50%;
+}
+
+.Toastify__toast-theme--light {
+  --toastify-color-light: #010001e6;
+  --toastify-text-color-light: white;
+  white-space: pre-wrap;
+  text-align: center;
+  letter-spacing: -0.6px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0px;
+
+  .Toastify__toast-body {
+    padding: 16px;
+  }
+}
+
+.Toastify__close-button--light {
+  display: none;
+}
+
+/*  */
+.CircularProgressbar text {
+  font-weight: bold;
+}
