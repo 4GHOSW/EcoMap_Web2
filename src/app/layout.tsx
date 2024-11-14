@@ -6,10 +6,11 @@ import { Metadata } from 'next'
 import RecoilProvider from '@/lib/provider/RecoilProvider'
 import { OverlayContainer } from '@/lib/hook/useOverlay'
 import ReactQueryProviders from '@/lib/provider/ReactQueryProvider'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? 'LADS' : process.env.NEXT_PUBLIC_NODE_ENV === 'staging' ? '[DEV] LADS' : '[LOCAL] LADS',
-  description: 'Lotte AI Data Storage',
+  title: process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? 'EcoMap' : process.env.NEXT_PUBLIC_NODE_ENV === 'staging' ? '[DEV] EcoMap' : '[LOCAL] EcoMap',
+  description: '친환경 길찾기',
   icons: { icon: '/images/favicon.png' },
 }
 
@@ -17,8 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
       <head>
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,target-densityDpi=device-dpi," />
+        <meta httpEquiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: blob: 'unsafe-inline'; connect-src * 'unsafe-inline';" />
       </head>
       <body className="flex flex-1 flex-col">
         <ReactQueryProviders>
@@ -26,6 +26,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <OverlayContainer />
 
             {children}
+            <Script type="text/javascript" src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`} />
           </RecoilProvider>
         </ReactQueryProviders>
       </body>
