@@ -1,4 +1,4 @@
-# MLOPS Lotte AI Data Storage
+# Ecomap Next.js
 >front-end 코드입니다.
 
 <img src="https://img.shields.io/badge/node-20.13.1-red" alt="Npm">
