@@ -1,6 +1,7 @@
 import { CarbonEmission } from '@/constants/emission'
 import { RouteData } from './NaverMap'
 import Image from 'next/image'
+import { getImagePath } from '@/util/path'
 
 const EMISSION_BY_MODE = {
   WALK: CarbonEmission.WALK_EMISSION,
@@ -10,15 +11,15 @@ const EMISSION_BY_MODE = {
 
 const TRANSPORT_ICONS = {
   WALK: {
-    src: '/image/common/walking.png',
+    src: getImagePath('/image/common/walking.png'),
     alt: '도보',
   },
   BUS: {
-    src: '/image/common/bus.png',
+    src: getImagePath('/image/common/bus.png'),
     alt: '버스',
   },
   SUBWAY: {
-    src: '/image/common/train.png',
+    src: getImagePath('/image/common/train.png'),
     alt: '지하철',
   },
 } as const
@@ -26,7 +27,7 @@ const TRANSPORT_ICONS = {
 const CloudBox = ({ value }: { value: string }) => (
   <div className="relative flex items-center justify-center">
     <div className="absolute -top-24 h-[60px] w-[100px]">
-      <Image src="/image/common/cloud.png" alt="cloud" fill className="object-contain" priority />
+      <Image src={getImagePath('/image/common/cloud.png')} alt="cloud" fill className="object-contain" priority />
       <span className="absolute inset-0 z-10 flex items-center justify-center text-sm">{value}</span>
     </div>
   </div>
