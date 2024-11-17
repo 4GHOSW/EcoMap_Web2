@@ -22,5 +22,5 @@ npm run dev
 https://eco-map-web.vercel.app/
 
 ```bash
-npx vercel
+npx vercel --prod
 ```
