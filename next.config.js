@@ -5,6 +5,15 @@ const nextConfig = {
 
     return config
   },
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/:path*',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
