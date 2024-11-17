@@ -1,5 +1,5 @@
 1:HL["https://4ghosw.github.io/EcoMap_Web2/_next/static/css/73799a42d7cbca3d.css","style",{"crossOrigin":""}]
-0:["UM7ezoelzMuYpIY3nzl4n",[[["",{"children":["test",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://4ghosw.github.io/EcoMap_Web2/_next/static/css/73799a42d7cbca3d.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+0:["pbXonam_UAQEWOzLzC36v",[[["",{"children":["test",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://4ghosw.github.io/EcoMap_Web2/_next/static/css/73799a42d7cbca3d.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
 4:HL["https://4ghosw.github.io/EcoMap_Web2/_next/static/css/23eb5303eff09bc1.css","style",{"crossOrigin":""}]
 5:HL["https://4ghosw.github.io/EcoMap_Web2/_next/static/css/5881c542306cdfe3.css","style",{"crossOrigin":""}]
 6:I[27468,["691","static/chunks/f4e5f4e1-d194f13afbf68f02.js","684","static/chunks/684-9f3af97e71c20f56.js","185","static/chunks/app/layout-daa98eeffadccb90.js"],""]
