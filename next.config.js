@@ -8,6 +8,9 @@ const nextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? 'https://4ghosw.github.io/EcoMap_Web2/' : '',
   trailingSlash: true,
   output: 'export',
+  images: {
+    unoptimized: true,
+  },
 }
 
 module.exports = nextConfig

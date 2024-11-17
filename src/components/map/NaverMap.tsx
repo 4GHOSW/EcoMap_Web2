@@ -14,7 +14,7 @@ interface NaverMapProps {
 
 export interface RouteData {
   legs: Array<{
-    mode: string
+    mode: 'WALK' | 'BUS' | 'SUBWAY'
     start: { lon: number; lat: number }
     end: { lon: number; lat: number }
     steps?: Array<{ linestring: string }>
@@ -60,10 +60,9 @@ export default function NaverMap({ startX, startY, endX, endY }: NaverMapProps) 
             endY: endY,
           })
 
-          console.log(data)
-
           const routeData: RouteData = data.data.metaData.plan.itineraries[0]
           setRouteLegs(routeData.legs)
+          console.log(routeData.legs)
 
           // 시작점 마커
           new window.naver.maps.Marker({

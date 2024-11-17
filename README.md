@@ -17,10 +17,10 @@ npm install
 npm run dev
 ```
 
-## Vercel 배포
+## github page 배포
 
-https://eco-map-web.vercel.app/
+https://4ghosw.github.io/EcoMap_Web2/
 
 ```bash
-npx vercel --prod
+npm run deploy
 ```
