@@ -1,4 +1,4 @@
-# MLOPS Lotte AI Data Storage
+# Ecomap Next.js
 
 > front-end 코드입니다.
 
