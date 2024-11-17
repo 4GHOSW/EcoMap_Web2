@@ -16,3 +16,7 @@ export default function Home({ searchParams }: { searchParams: { startX: string;
     </Suspense>
   )
 }
+
+// 동적 라우팅 설정
+export const fetchCache = 'force-no-store'
+export const revalidate = 0
