@@ -1,16 +1,29 @@
-import dynamic from 'next/dynamic'
+'use client'
 
-// 클라이언트 사이드에서만 렌더링되도록 설정
+import tmapAPI from '@/api/tmapAPI'
+import dynamic from 'next/dynamic'
+import { useEffect } from 'react'
+
 const NaverMap = dynamic(() => import('@/components/map/NaverMap'), {
   ssr: false,
-  loading: () => <div className="h-[500px] w-full bg-gray-200" />,
+  loading: () => <div className="h-screen w-screen bg-gray-200" />,
 })
 
-export default function Home() {
-  return (
-    <main className="min-h-screen p-4">
-      <h1 className="mb-4 text-2xl font-bold">네이버 지도</h1>
-      <NaverMap />
-    </main>
-  )
+export default function Home({ searchParams }: { searchParams: { startX: string; startY: string; endX: string; endY: string } }) {
+  // const fetchAPI = () => {
+  //   tmapAPI('POST', 'https://apis.openapi.sk.com/transit/routes', {
+  //     startX: '126.936928',
+  //     startY: '37.555162',
+  //     endX: '127.029281',
+  //     endY: '37.564436',
+  //   }).then((res) => {
+  //     console.log(res)
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   fetchAPI()
+  // }, [])
+
+  return <NaverMap {...searchParams} />
 }

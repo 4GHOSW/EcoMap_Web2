@@ -17,9 +17,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
-      <head>
-        <meta httpEquiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: blob: 'unsafe-inline'; connect-src * 'unsafe-inline';" />
-      </head>
+      <head></head>
       <body className="flex flex-1 flex-col">
         <ReactQueryProviders>
           <RecoilProvider>

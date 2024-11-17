@@ -1,5 +1,6 @@
 # MLOPS Lotte AI Data Storage
->front-end 코드입니다.
+
+> front-end 코드입니다.
 
 <img src="https://img.shields.io/badge/node-20.13.1-red" alt="Npm">
 <img src="https://img.shields.io/badge/next.js-13.5.6-blue" alt="Next.js">
@@ -14,4 +15,12 @@
 ```bash
 npm install
 npm run dev
+```
+
+## Vercel 배포
+
+https://eco-map-web.vercel.app/
+
+```bash
+npx vercel
 ```
